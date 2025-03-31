@@ -4,7 +4,7 @@ import java.util.Vector;
 /*
  * VectorHeap.java
  * This class implements a priority queue using a vector as the underlying data structure.
- * this class was taken from the book "Data Structures and Algorithms in Java" 
+ * this class was taken from the book "Data Structures and Algorithms in Java" and modified by Marco Díaz 24229
  * 
  */
 
@@ -14,7 +14,7 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 
 	@Override
 	public E peek() {
-		return data.get(data.size() - 1);
+		return isEmpty() ? null : data.get(0);
 	}
 
 	@Override
@@ -28,17 +28,26 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 	}
 
 	@Override
-	public E poll() {
-		if (isEmpty()) {
-			return null; // or throw an exception if preferred
-		}
-		return data.remove(data.size() - 1);
+	public E poll()
+	    // pre: heap is not empty
+	    // post: removes and returns the smallest element in the heap
+	{
+	    if (isEmpty()) {
+	        return null; // Return null if the heap is empty
+	    }
+	    E minValue = data.get(0); // Get the root element (smallest element)
+	    E lastValue = data.remove(data.size() - 1); // Remove the last element
+	    if (!isEmpty()) {
+	        data.set(0, lastValue); // Move the last element to the root
+	        pushDownRoot(0); // Restore the heap property by pushing the root down
+	    }
+	    return minValue; // Return the smallest element
 	}
 
 	public VectorHeap()
 	// post: constructs a new priority queue
 	{
-		data = new Vector<E>();
+		data = new Vector<E>(); 	
 	}
 
 	public VectorHeap(Vector<E> v)
@@ -86,6 +95,7 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 		}
 		data.set(leaf, value);
 	}
+
 	@Override
 	public void add(E value)
 	// pre: value is non-null comparable
@@ -122,18 +132,6 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 				return;
 			}
 		}
-	}
-
-	public E remove()
-	// pre: !isEmpty()
-	// post: returns and removes minimum value from queue
-	{
-		E minVal = peek();
-		data.set(0, data.get(data.size() - 1));
-		data.setSize(data.size() - 1);
-		if (data.size() > 1)
-			pushDownRoot(0);
-		return minVal;
 	}
 	@Override
 	public void clear()

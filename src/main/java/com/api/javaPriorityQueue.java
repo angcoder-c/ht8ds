@@ -2,10 +2,10 @@ package com.api;
 
 import java.util.PriorityQueue;
 
-public class javaPriorityQueue<E extends Comparable<E>> implements InterfacePriority<E> {
+public class JavaPriorityQueue<E extends Comparable<E>> implements InterfacePriority<E> {
     private PriorityQueue<E> queue;
 
-    public javaPriorityQueue() {
+    public JavaPriorityQueue() {
         queue = new PriorityQueue<>();
     }
 

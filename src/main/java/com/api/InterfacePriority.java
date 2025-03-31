@@ -5,7 +5,10 @@ package com.api;
  * 
  * @param <E> the type of elements in the priority queue, which must be comparabl
  *   this class was based on the one whos from the book "Data Structures and Algorithms in Java" 
+ * Method made by Marco Alejandro Díaz Castañeda</p>
+ * <p>Created on 30-03-2025</p>
  */
+
 
 	public interface InterfacePriority<E extends Comparable<E>>{
 
