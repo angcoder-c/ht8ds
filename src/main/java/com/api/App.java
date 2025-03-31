@@ -51,7 +51,6 @@ public class App {
         while (!heap.isEmpty()) {
             System.out.println(heap.poll());
         }
-
         scanner.close();
     }
     }

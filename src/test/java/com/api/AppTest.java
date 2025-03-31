@@ -62,4 +62,40 @@ public class AppTest {
 
         assertEquals(priorityQueue.isEmpty(), vectorHeap.isEmpty());
     }
+    @Test
+    public void testVectorHeapAddSingleElement() {
+        VectorHeap<Integer> vectorHeap = new VectorHeap<>();
+        vectorHeap.add(15);
+        assertEquals(15, vectorHeap.peek());
+    }
+
+    @Test
+    public void testVectorHeapRemoveSingleElement() {
+        VectorHeap<Integer> vectorHeap = new VectorHeap<>();
+        vectorHeap.add(30);
+        int removedElement = vectorHeap.poll();
+        assertEquals(30, removedElement);
+        assertEquals(true, vectorHeap.isEmpty());
+    }
+
+    @Test
+    public void testVectorHeapAddMultipleElements() {
+        VectorHeap<Integer> vectorHeap = new VectorHeap<>();
+        vectorHeap.add(25);
+        vectorHeap.add(10);
+        vectorHeap.add(40);
+        assertEquals(10, vectorHeap.peek());
+    }
+
+    @Test
+    public void testVectorHeapRemoveMultipleElements() {
+        VectorHeap<Integer> vectorHeap = new VectorHeap<>();
+        vectorHeap.add(50);
+        vectorHeap.add(20);
+        vectorHeap.add(30);
+        assertEquals(20, vectorHeap.poll());
+        assertEquals(30, vectorHeap.poll());
+        assertEquals(50, vectorHeap.poll());
+        assertEquals(true, vectorHeap.isEmpty());
+    }
 }
