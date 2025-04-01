@@ -38,4 +38,6 @@ public class JavaPriorityQueue<E extends Comparable<E>> implements InterfacePrio
     public void clear() {
         queue.clear();
     }
+
 }
+

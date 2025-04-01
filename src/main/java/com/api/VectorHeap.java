@@ -32,6 +32,7 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 	    // pre: heap is not empty
 	    // post: removes and returns the smallest element in the heap
 	{
+
 	    if (isEmpty()) {
 	        return null; // Return null if the heap is empty
 	    }
@@ -89,6 +90,10 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 		E value = data.get(leaf);
 		while (leaf > 0 &&
 				(value.compareTo(data.get(parent)) < 0)) {
+			// If the value is equal to the parent, ensure it goes to the left side
+			if (value.compareTo(data.get(parent)) == 0 && leaf % 2 == 0) {
+				break;
+			}
 			data.set(leaf, data.get(parent));
 			leaf = parent;
 			parent = parent(leaf);
@@ -139,4 +144,5 @@ public class VectorHeap<E extends Comparable<E>> implements InterfacePriority<E>
 	{
 		data.removeAllElements();
 	}
+
 }

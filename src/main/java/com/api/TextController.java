@@ -26,9 +26,9 @@ public class TextController {
                 String[] attributes = line.split(",");
                 if (attributes.length == 3) {
                     String name = attributes[0];
-                    String condition = attributes[1];
                     String priority = attributes[2];
-                    patients.add(new Patient(name,condition, priority));
+                    String condition = attributes[1];
+                    patients.add(new Patient(name,priority, condition));
                 }
             }
         } catch (IOException e) {

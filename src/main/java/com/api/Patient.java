@@ -37,7 +37,6 @@ public class Patient implements Comparable<Patient> {
 
     @Override
     public int compareTo(Patient other) {
-        // Reverse the natural order to make it descending (A > B > C > D > E)
         return this.priority.compareTo(other.priority);
     }
 
