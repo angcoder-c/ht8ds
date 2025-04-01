@@ -1,0 +1,12 @@
+Jorge Perez, migraña, C
+Juan Perez, fractura de pierna, C
+Maria Ramirez, apendicitis, A
+Lorenzo Toledo, chikunguya, E
+Carmen Sarmientos, dolores de parto, B
+Elena Morales, bronquitis, D
+Luis Fernandez, ataque al corazón, A
+Ana Gonzalez, neumonía, B
+Carlos Martinez, gripe, D
+Sofia Lopez, infección urinaria, C
+Miguel Torres, fractura de pierna, B
+Laura Ramirez, apendicitis, A
