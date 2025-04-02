@@ -1,5 +1,76 @@
 # Hoja de Trabajo #8
 
+## Instalación
+
+```bash
+git clone git@github.com:angcoder-c/ht8ds.git
+cd ./ht8ds
+```
+
+### Virtualenv 
+
+```bash
+python -m pip install virtualenv
+python -m venv .venv
+```
+
+#### Activación
+
+**PowerShell**
+  ```bash
+  Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+  .\venv\Scripts\Activate.ps1
+  ```
+
+**CMD**
+  ```bash
+  .\venv\Scripts\activate
+  ```
+
+**Bash**
+  ```bash
+  source .\venv\Scripts\activate
+  ```
+
+**Dependencias**
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Ejecución
+
+### Dependencias
+
+```bash
+mvn install
+```
+
+### Compilación
+
+```bash
+mvn package
+```
+
+### Ejecución
+
+- **Bash**
+  ```bash
+  mvn exec:java -Dexec.mainClass="com.interpreter.api.App"
+  ```
+- **PowerShell**
+  ```bash
+  mvn exec:java '-Dexec.mainClass="com.interpreter.api.App"'
+  ```
+
+### Pruebas
+
+```bash
+mvn test
+```
+
+
+
 ## Parte 2: Simulación de sala de emergencias
 
 #### **Tiempo de espera VS Prioridad**
